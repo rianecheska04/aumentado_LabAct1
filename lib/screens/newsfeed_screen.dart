@@ -33,14 +33,14 @@ class NewsFeedScreen extends StatefulWidget {
 class _NewsFeedScreenState extends State<NewsFeedScreen> {
   final List<Post> _posts = [
     Post(
-      authorName: 'Your Name',
-      date: 'October 11',
-      text: 'Kamusta!',
-      likes: 100,
+      authorName: 'Riane Cheska',
+      date: 'November 30',
+      text: 'Good night, guys!',
+      likes: 250,
       imageAsset: null,
     ),
     Post(
-      authorName: "Classmate's Name",
+      authorName: "Justin",
       date: 'December 2',
       text: 'Kicking off the holiday season!',
       likes: 200,
