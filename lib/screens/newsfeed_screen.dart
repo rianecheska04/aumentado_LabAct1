@@ -14,12 +14,14 @@ class Post {
     required this.text,
     required this.likes,
     this.imageAsset,
+    required this.avatarAsset,
   });
 
   final String authorName;
   final String date;
   final String text;
   int likes;
+  final String avatarAsset;
   final String? imageAsset;
 }
 
@@ -37,13 +39,15 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
       date: 'November 30',
       text: 'Good night, guys!',
       likes: 250,
+      avatarAsset: 'assets/images/profile.png',
       imageAsset: null,
     ),
     Post(
       authorName: "Justin",
       date: 'December 2',
-      text: 'Kicking off the holiday season!',
+      text: 'What a beautiful place!',
       likes: 200,
+      avatarAsset: 'assets/images/profile_1.png',
       // TODO: Add an image file named post_image.png to assets/images/,
       // or change this path to your own image. If the file is missing,
       // the card shows a grey placeholder instead of crashing.
@@ -69,6 +73,7 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
           text: post.text,
           likes: post.likes,
           imageAsset: post.imageAsset,
+          avatarAsset: post.avatarAsset,
           onLike: () => _likePost(index),
         );
       },

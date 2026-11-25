@@ -17,7 +17,9 @@ class NewsFeedCard extends StatelessWidget {
     required this.text,
     required this.likes,
     this.imageAsset,
+    required this.avatarAsset,
     required this.onLike,
+
   });
 
   final String authorName;
@@ -25,6 +27,7 @@ class NewsFeedCard extends StatelessWidget {
   final String text;
   final int likes;
   final String? imageAsset;
+  final String avatarAsset;
   final VoidCallback onLike;
 
   @override
@@ -44,10 +47,10 @@ class NewsFeedCard extends StatelessWidget {
                 // user profile image. Replace the icon below with a
                 // CircleAvatar using an AssetImage or NetworkImage.
                 CircleAvatar(
-                  radius: 20.r,
-                  backgroundColor: AppColors.lightGrey,
-                  child: const Icon(Icons.person, color: AppColors.grey),
-                ),
+                    radius: 20.r,
+                    backgroundColor: AppColors.lightGrey,
+                    backgroundImage: AssetImage(avatarAsset),
+                  ),
                 SizedBox(width: 10.w),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -144,15 +147,20 @@ class NewsFeedCard extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
             // Write a comment field.
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-              decoration: BoxDecoration(
-                color: AppColors.lightGrey,
-                borderRadius: BorderRadius.circular(20.r),
+            TextField(
+                decoration: InputDecoration(
+                hintText: 'Write a comment...',
+                filled: true,
+                fillColor: AppColors.lightGrey,
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 12.w,
+                  vertical: 8.h,
               ),
-              child: const CustomText(
-                text: 'Write a comment...',
-                color: AppColors.grey,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.r),
+                borderSide: BorderSide.none,
+                
+                ),
               ),
             ),
           ],
